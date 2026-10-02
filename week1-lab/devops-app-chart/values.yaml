@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: devops-week1-app
+  tag: v5
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+postgres:
+  user: postgres
+  password: SuperSecretPassword123!
+  db: devopsdb
+
+resources:
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+  limits:
+    cpu: "1000m"
+    memory: "512Mi"
